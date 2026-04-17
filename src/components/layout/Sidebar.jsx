@@ -6,17 +6,17 @@ const Sidebar = ({ open, setOpen, userRole }) => {
 
   const getNavigationItems = () => {
     switch (userRole) {
-      case "Student":
+      case "student":
         return [
-          { name: "Home", path: "/student", icon: "home" },
+          { name: "Home", path: "/student/dashboard", icon: "home" },
           {
             name: "Submit Proposal",
-            path: "/student/submit-proposal",
+            path: "/student/proposal",
             icon: "document",
           },
           {
             name: "Upload Files",
-            path: "/student/upload-files",
+            path: "/student/upload",
             icon: "upload",
           },
           { name: "Supervisor", path: "/student/supervisor", icon: "user" },
@@ -27,24 +27,24 @@ const Sidebar = ({ open, setOpen, userRole }) => {
             icon: "bell",
           },
         ];
-      case "Teacher":
+      case "professor":
         return [
-          { name: "Home", path: "/teacher", icon: "home" },
+          { name: "Home", path: "/teacher/dashboard", icon: "home" },
           {
             name: "Pending Requests",
-            path: "/teacher/pending-requests",
+            path: "/teacher/requests",
             icon: "clock",
           },
           {
             name: "Assigned Students",
-            path: "/teacher/assigned-students",
+            path: "/teacher/students",
             icon: "users",
           },
           { name: "Files", path: "/teacher/files", icon: "folder" },
         ];
-      case "Admin":
+      case "admin":
         return [
-          { name: "Home", path: "/admin", icon: "home" },
+          { name: "Home", path: "/admin/dashboard", icon: "home" },
           { name: "Manage Students", path: "/admin/students", icon: "users" },
           {
             name: "Manage Teachers",
@@ -355,7 +355,7 @@ const Sidebar = ({ open, setOpen, userRole }) => {
                 } ${open ? "block" : "hidden lg:hidden"}`}
             >
               <p className="text-xs text-slate-500 text-center">
-                Educational Project Management v1.0
+                Uni Track Project Management v1.0
               </p>
             </div>
           </div>
@@ -399,7 +399,7 @@ const Sidebar = ({ open, setOpen, userRole }) => {
       {/* Mobile footer */}
       {/* <div className="p-4 border-t border-slate-200">
             <p className="text-xs text-slate-500 text-center">
-              Educational Project Management v1.0
+              Uni Track Project Management v1.0
             </p>
           </div> */}
       {/* </div> */}
@@ -449,7 +449,7 @@ const Sidebar = ({ open, setOpen, userRole }) => {
           {/* Mobile footer */}
           <div className="p-4 border-t border-slate-200">
             <p className="text-xs text-slate-500 text-center">
-              Educational Project Management v1.0
+              Uni Track Project Management v1.0
             </p>
           </div>
         </div>

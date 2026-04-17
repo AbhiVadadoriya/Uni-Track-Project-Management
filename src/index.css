@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Educational Project Management System Design System */
+/* Uni Track Project Management System Design System */
 
 @layer base {
   :root {
@@ -202,14 +202,5 @@
   
   .modal-content {
     @apply bg-white rounded-lg shadow-lg max-w-md w-full mx-4;
-  }
-  
-  /* Animations */
-  .fade-in {
-    @apply animate-in fade-in duration-200;
-  }
-  
-  .slide-in {
-    @apply animate-in slide-in-from-right duration-300;
   }
 }

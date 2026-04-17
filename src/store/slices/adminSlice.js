@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { axiosInstance } from "../../lib/axios";
 import { toast } from "react-toastify";
-import { createDeadline } from "./deadlineSlice";
 
 const adminSlice = createSlice({
   name: "admin",
