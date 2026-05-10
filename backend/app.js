@@ -22,16 +22,18 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+// Allow multiple origins from comma-separated FRONTEND_URL
+const allowedOrigins = (process.env.FRONTEND_URL || "").split(",").map(url => url.trim());
 app.use(cors({
-    origin: function(origin, callback) {
-      if (!origin || /^http:\/\/localhost:\d+$/.test(origin) || origin === process.env.FRONTEND_URL) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
+  origin: function(origin, callback) {
+    if (!origin || /^http:\/\/localhost:\d+$/.test(origin) || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
 }));
 
 const uploadsDir = process.env.VERCEL ? "/tmp/uploads" : path.join(__dirname, "uploads");
