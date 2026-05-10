@@ -34,8 +34,8 @@ app.use(cors({
     credentials: true,
 }));
 
-const uploadsDir = path.join(__dirname, "uploads");
-const tempDir = path.join(__dirname, "temp");
+const uploadsDir = process.env.VERCEL ? "/tmp/uploads" : path.join(__dirname, "uploads");
+const tempDir = process.env.VERCEL ? "/tmp/temp" : path.join(__dirname, "temp");
 
 if(!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, {recursive: true});
 if(!fs.existsSync(tempDir)) fs.mkdirSync(tempDir, {recursive: true});
